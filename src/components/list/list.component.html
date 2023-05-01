@@ -1,0 +1,37 @@
+<div class="container">
+    <div class="row">
+        <h2>List of Houses</h2>
+    </div>
+    <div class="row">
+        <div class="col-md-12 table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nom</th>
+                        <th>Adresse</th>
+                        <th>Propriétaire</th>
+                        <th>Ville</th>
+                        <th>Etat</th>
+                        <th>Code postal</th>
+                        <th>Supprimer ?</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let house of houses">
+                        <td>{{ house.id }}</td>
+                        <td>{{ house.name }}</td>
+                        <td>{{ house.adresse }}</td>
+                        <td>{{ house.owner.name }}</td>
+                        <td>{{ house.city }}</td>
+                        <td>{{ house.state }}</td>
+                        <td>{{ house.zip }}</td>
+                        <td><button type="button" class="btn btn-danger btn-sm"
+                                (click)="deleteHouse(house.id)">Supprimer</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

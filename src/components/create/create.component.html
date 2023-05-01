@@ -1,0 +1,69 @@
+<!-- create.component.html -->
+
+<div class="alert alert-danger alert-dismissible fade show" role="alert" *ngIf="toastError">
+  La maison n'a pas pu être créée, vérifier que tout les champs soient complets !!!
+  <button type="button" class="close" (click)="closeAlert()" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+
+</div>
+
+<div class="alert alert-success" role="alert" *ngIf="sucess">
+  La maison a été créée avec succès !!
+  <button type="button" class="close" (click)="closeAlert()" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+
+</div>
+
+
+<div class="container-fluid">
+<form [formGroup]="houseForm" (ngSubmit)="onSubmit()">
+  <div class="form-row justify-content-center">
+    <div class="form-group col-md-6">
+      <label for="inputName">Name of House</label>
+      <input formControlName="name" type="text" class="form-control" id="inputName" placeholder="Name of House">
+    </div>
+
+    <div class="form-group col-md-6">
+      <label for="inputOwner">Name of Owner</label>
+      <input formControlName="owner" type="text" class="form-control" id="inputOwner" placeholder="Owner">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="inputAddress">Address</label>
+    <input formControlName="address" type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputCity">City</label>
+      <input formControlName="city" type="text" class="form-control" id="inputCity" placeholder="City">
+    </div>
+
+    <div class="form-group col-md-4">
+      <label for="inputState">State</label>
+      <select formControlName="state" id="inputState" class="form-control">
+        <option value="" disabled selected hidden>Choose...</option>
+        <option value="France">France</option>
+        <option value="Canada">Canada</option>
+        <option value="United States">United States</option>
+      </select>
+    </div>
+
+    <div class="form-group col-md-2">
+      <label for="inputZip">Zip Code</label>
+      <input formControlName="zip" type="text" class="form-control" id="inputZip" placeholder="Zip Code">
+    </div>
+
+  </div>
+
+  <button type="submit" class="btn btn-primary">Create House</button>
+</form>
+</div>
+
+
+
+
+

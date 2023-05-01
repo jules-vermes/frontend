@@ -1,2 +1,20 @@
-<div class="container"></div>
-<input placeholder="Search here" name="searchbar">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <span class="navbar-brand">Library</span>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/list-house">List</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/create-house" class="nav-link">Create House</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+<router-outlet></router-outlet>
